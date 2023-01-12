@@ -1,0 +1,155 @@
+*
+{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body
+{
+	background-color: #000000;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+
+section
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	min-height: 90vh;
+	animation: sect 500ms forwards 2s;
+}
+
+h1
+{
+	color: #FFFFFF;
+	font-family: 'Rowdies', bold;
+	position: absolute;
+	top: 50;
+	left: 50;
+	right: 50;
+	bottom: 50;
+ 	font-size: 10vh;
+ 	animation:
+	fade 1s forwards 2,
+	up 500ms forwards 2.5s;
+}
+
+.space
+{
+	width: 1px;
+	height: 10vh;
+}
+
+#hello
+{
+	opacity: 0;
+	font-family: 'Major Mono Display', monospace;
+	color: #FFFFFF;
+	position: relative;
+	height: 100%;
+	animation: word 500ms forwards 2500ms;
+}
+
+#hello::before,
+#hello::after
+{
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+}
+
+#hello::before
+{
+	background: #000000;
+	animation: 
+		type 2s steps(14) forwards 3.5s;
+}
+
+#hello::after
+{
+	width: 0.125em;
+	background: #FFFFFF;
+	animation: 
+		type 2s steps(14) forwards 3.5s,
+	  blink 500ms steps(14) infinite 2.5s,
+		blink 500ms forwards 6.5s;
+}
+
+.box
+{
+	opacity: 0;
+	animation: box 2.5s forwards 3.5s;
+}
+
+.glass
+{
+	height: 17em;
+	width: 20em;
+	padding: 1em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	justify-content: space-between;
+  background: rgba( 255, 255, 255, 0.05 );
+	box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+	backdrop-filter: blur( 0.5px );
+	-webkit-backdrop-filter: blur( 0.5px );
+	border-radius: 10px;
+}
+
+@keyframes box
+{
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+@keyframes type
+{
+	to 
+	{
+		left: 100%;
+	}
+}
+
+@keyframes blink
+{
+	to 
+	{
+		background: transparent;
+	}
+}
+
+@keyframes fade
+{
+	0% { opacity: 0; }
+	50% { opacity: 1; }
+	100% { opacity: 0; }
+}
+
+@keyframes up
+{
+	0% { opacity: 0; font-size:  5vh; position: static; top: 0; margin-top: 10px}
+	100% { opacity: 1; font-size: 5vh; position: static; top: 0; margin-top: 10px}
+}
+
+@keyframes word
+{
+	0% { opacity: 0; font-size: 7vw; }
+	100% { opacity: 1; font-size: 7vw; }
+}
+
+@keyframes sect
+{
+	0% { align-self: start; opacity: 0; }
+	100% { align-self: start; opacity: 1; }
+}
